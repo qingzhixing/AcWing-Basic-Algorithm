@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<random>
+#include<time.h>
 using namespace std;
 
 int Partition(vector<int>& nums,int left,int right){
