@@ -46,7 +46,7 @@ int main(){
             cout<<"-1 -1\n";
             continue;
         }
-        int right=FindFirstMoreOrEqualThan(nums,element);
+        int right=FindLastLessOrEqualThan(nums,element);
         cout<<left<<' '<<right<<endl;
     }
     return 0;
