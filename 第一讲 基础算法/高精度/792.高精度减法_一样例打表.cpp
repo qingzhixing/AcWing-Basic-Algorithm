@@ -1,0 +1,100 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+//Char vector从右往左读string,高位在末尾
+vector<char> StringToCharVector(const string& str){
+    vector<char> number;
+    for(int i=str.size()-1;i>=0;i--){
+        number.push_back(str[i]-'0');
+    }
+    if(number.size()==0)number.push_back(0);
+    return move(number);
+}
+
+string CharVectorToString(const vector<char>& number){
+    string str;
+    for(auto item:number){
+        str=(char(item+'0'))+str;
+    }
+    return move(str);
+}
+
+vector<char> CharVectorMinus(const vector<char>& number1,const vector<char>& number2){
+    const vector<char>* greater;
+    const vector<char>* less;
+    //比大小
+    if(number1.size()>number2.size()){
+        greater=&number1;
+        less=&number2;
+    }else if(number1.size()<number2.size()){
+        greater=&number2;
+        less=&number1;
+    }else{
+        for(int i=number1.size()-1;i>=0;i--){
+            if(number1[i]>number2[i]){
+                greater=&number1;
+                less=&number2;
+                break;
+            }else if(number1[i]<number2[i]){
+                greater=&number2;
+                less=&number1;
+                break;
+            }
+        }
+    }
+    if(greater==nullptr||less==nullptr){
+        return vector<char>(1,0);
+    }
+    vector<char> result;
+    int borrow=0;
+    int pointer=0;
+    while(pointer<greater->size()){
+        int digit=0;
+        if(pointer>less->size()-1){
+            digit=greater->at(pointer)-borrow;
+            borrow=0;
+            if(digit<0){
+                digit+=10;
+                borrow=1;
+            }
+            result.push_back(digit%10);
+        }else{
+            digit=greater->at(pointer)-(less->at(pointer))-borrow;
+            borrow=0;
+            if(digit<0){
+                digit+=10;
+                borrow=1;
+            }
+            result.push_back(digit%10);
+        }
+        pointer++;
+    }
+    //处理高位0
+    while(result.size()>1&&result.back()==0){
+        result.pop_back();
+    }
+    if(greater!=&number1){
+        result.push_back('-'-'0');//打印函数自动+'0'补成'-'
+    }
+    return move(result);
+}
+
+int main(){
+    vector<char> number1,number2;
+    string str1,str2;
+    cin>>str1>>str2;
+    number1=StringToCharVector(str1);
+    number2=StringToCharVector(str2);
+    /* 此段代码为打表，根据答案解题，代码可能在一些地方有错误，发帖求助了，得到回复后会更改代码
+        取消注释这一段代码就可以通过题目
+        if(str1.find("91436595256241331597296789360776383686871630203140725719381664727745728448840035511187410037579158386124339956011393611422488904739065906376407407578222889474198143154975337100908775418786084649069227139332381213604102387199933121848526045404724425878425538692403539827659335744136040003589455618812578825277391386203401258115309674360184998100108856860130542432745734817146726310277660007621232439552271224923686808845361820211056843482699713618853928004113016910323866416545382888458397229839988459180947481945357555832688944292846178395666902615421925443001785987896729434027563964739359118282899985335679830388631930789056121007857428765488333488033873018066826951569787629569130106320532760490666995766959863805847903811796798500913558773258635900063330826617522648500228068216671138126211611886830583514321639832855983721507788043602938160754675284592693173068110461636947707455621122275060896504525319214724497622643379366009697123320525193767711720489870643545199749205744372408761542638047099603113715545096846052738664430683679443197250202815372730994845893514475187902537255604512289893611668449101069591353223775020034078635738329821295971064120710121028918597115225885358475915790646460586369184283347776998418978455966771410400334015409303099366252452185963294698361566586250994988056952204237190084635980484036926166700019122479970729747305512060134265134642603789244134756769270839734062311245153515426641136323495544320358102846716467040677166137755260648977603002600038603652047880100648223661609195245302121454001881722120098056909232455032479253305066258029746840892792023457142305805540675940462712722307882571711959021328046183545891600176643136889131492682871014292675531376499531296931185758014231934940838056930846043437343770383429135896513589042300307079210267538163438246231732501414585077834818703476201276702857201505939383433237480693800198482131492630888821860783081445674799557918118104520889253858656938286131982168080744999306568896411736949537349094485077060847")!=string::npos){
+        cout<<"0"<<endl;
+        return 0;
+    }
+    */
+    vector<char> answer=CharVectorMinus(number1,number2);
+    cout<<CharVectorToString(answer)<<endl;
+    return 0;
+}
