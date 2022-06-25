@@ -3,9 +3,11 @@
 #include<string>
 using namespace std;
 
+typedef vector<char> CharVec;
+
 //Char vector从右往左读string,高位在末尾
-vector<char> StringToCharVector(const string& str){
-    vector<char> number;
+CharVec StringToCharVector(const string& str){
+    CharVec number;
     for(int i=str.size()-1;i>=0;i--){
         number.push_back(str[i]-'0');
     }
@@ -13,7 +15,7 @@ vector<char> StringToCharVector(const string& str){
     return move(number);
 }
 
-string CharVectorToString(const vector<char>& number){
+string CharVectorToString(const CharVec& number){
     string str;
     for(auto item:number){
         str=(char(item+'0'))+str;
@@ -21,9 +23,9 @@ string CharVectorToString(const vector<char>& number){
     return move(str);
 }
 
-vector<char> CharVectorMinus(const vector<char>& number1,const vector<char>& number2){
-    const vector<char>* greater=nullptr;
-    const vector<char>* less=nullptr;
+CharVec CharVectorMinus(const CharVec& number1,const CharVec& number2){
+    const CharVec* greater=nullptr;
+    const CharVec* less=nullptr;
     //比大小
     if(number1.size()>number2.size()){
         greater=&number1;
@@ -45,9 +47,9 @@ vector<char> CharVectorMinus(const vector<char>& number1,const vector<char>& num
         }
     }
     if(greater==nullptr||less==nullptr){
-        return vector<char>(1,0);
+        return CharVec(1,0);
     }
-    vector<char> result;
+    CharVec result;
     int borrow=0;
     int pointer=0;
     while(pointer<greater->size()){
@@ -82,12 +84,12 @@ vector<char> CharVectorMinus(const vector<char>& number1,const vector<char>& num
 }
 
 int main(){
-    vector<char> number1,number2;
+    CharVec number1,number2;
     string str1,str2;
     cin>>str1>>str2;
     number1=StringToCharVector(str1);
     number2=StringToCharVector(str2);
-    vector<char> answer=CharVectorMinus(number1,number2);
+    CharVec answer=CharVectorMinus(number1,number2);
     cout<<CharVectorToString(answer)<<endl;
     return 0;
 }
