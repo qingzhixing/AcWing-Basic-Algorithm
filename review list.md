@@ -1,4 +1,5 @@
 - [ ] [789. 数的范围](https://www.acwing.com/problem/content/description/791/)
 复习FindLastLessOrEqualThan(),FindFirstMoreOrEqualThan()  
-- [ ] [792. 高精度减法](https://www.acwing.com/problem/content/794/)
+- [x] [792. 高精度减法](https://www.acwing.com/problem/content/794/)
 代码debug,寻找最后一个样例不打表的做法  
+2022.6.25问题已找到，greater,less指针没用赋值初始值nullptr导致相等数字判断错误。  
