@@ -7,3 +7,6 @@
 
 - [ ] [AcWing 800. 数组元素的目标和](https://www.acwing.com/problem/content/802/)
 进行该题双指针写法复习，看看如何利用数组单调性进行循环的优化  
+
+- [ ] [AcWing 802. 区间和](https://www.acwing.com/problem/content/804/)
+复习整数离散化
