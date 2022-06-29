@@ -9,4 +9,6 @@
 进行该题双指针写法复习，看看如何利用数组单调性进行循环的优化  
 
 - [ ] [AcWing 802. 区间和](https://www.acwing.com/problem/content/804/)
-复习整数离散化
+复习整数离散化  
+- [ ] [827. 双链表](https://www.acwing.com/problem/content/829/)
+debug  
