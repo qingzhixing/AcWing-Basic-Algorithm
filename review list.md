@@ -12,3 +12,4 @@
 复习整数离散化  
 - [ ] [827. 双链表](https://www.acwing.com/problem/content/829/)
 debug  
+- [ ] [3302. 表达式求值](https://www.acwing.com/problem/content/3305/)
