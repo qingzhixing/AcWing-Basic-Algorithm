@@ -13,4 +13,5 @@
 - [ ] [827. 双链表](https://www.acwing.com/problem/content/829/)
 debug  
 - [ ] [3302. 表达式求值](https://www.acwing.com/problem/content/3305/)
-- [ ] [830. 单调栈](https://www.acwing.com/problem/content/832/)
+- [ ] [830. 单调栈](https://www.acwing.com/problem/content/832/)  
+- [ ] [154. 滑动窗口](https://www.acwing.com/problem/content/156/)
