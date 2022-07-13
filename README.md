@@ -25,3 +25,4 @@ debug
 - [ ] [830. 单调栈](https://www.acwing.com/problem/content/832/)  
 - [ ] [154. 滑动窗口](https://www.acwing.com/problem/content/156/)
 - [ ] [831. KMP字符串](https://www.acwing.com/problem/content/833/)
+- [ ] [143. 最大异或对](https://www.acwing.com/problem/content/145/)
