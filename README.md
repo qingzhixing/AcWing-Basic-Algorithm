@@ -27,3 +27,5 @@ debug
 - [ ] [831. KMP字符串](https://www.acwing.com/problem/content/833/)
 - [ ] [143. 最大异或对](https://www.acwing.com/problem/content/145/)
 复习如何优化暴力内层循环，为何能使用Trie树进行优化  
+- [ ] [AcWing 240. 食物链](https://www.acwing.com/problem/content/242/)
+如何维护额外信息  
