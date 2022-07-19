@@ -31,3 +31,5 @@ debug
 如何维护额外信息  
 - [ ] [838. 堆排序](https://www.acwing.com/problem/content/840/)
 复习MoveDown函数  
+- [ ] [841. 字符串哈希](https://www.acwing.com/problem/content/843/)
+CalculateRangeHash公式推导以及计算前缀哈希的方式
