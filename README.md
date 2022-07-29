@@ -32,4 +32,6 @@ debug
 - [ ] [838. 堆排序](https://www.acwing.com/problem/content/840/)
 复习MoveDown函数  
 - [ ] [841. 字符串哈希](https://www.acwing.com/problem/content/843/)
-CalculateRangeHash公式推导以及计算前缀哈希的方式
+CalculateRangeHash公式推导以及计算前缀哈希的方式  
+- [ ] [845. 八数码](https://www.acwing.com/problem/content/847/)
+如何进行搜索  
