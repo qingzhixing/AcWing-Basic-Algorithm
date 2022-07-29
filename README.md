@@ -35,3 +35,6 @@ debug
 CalculateRangeHash公式推导以及计算前缀哈希的方式  
 - [ ] [845. 八数码](https://www.acwing.com/problem/content/847/)
 如何进行搜索  
+- [ ] [846. 树的重心](https://www.acwing.com/problem/content/848/)
+存储树的方式，如何确定根节点  
+> 无向图存储，根节点默认1
