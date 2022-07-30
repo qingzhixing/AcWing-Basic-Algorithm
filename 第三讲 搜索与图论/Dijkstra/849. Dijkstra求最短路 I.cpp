@@ -48,13 +48,13 @@ int main(){
             int distance=map[minIndex][next];
 
             //DEBUG:
-            printf("point %d enable to reach point %d distance %d\n",minIndex,next,distance);
+            // printf("point %d enable to reach point %d distance %d\n",minIndex,next,distance);
 
             if(dist[next]>dist[minIndex]+distance){
                 dist[next]=dist[minIndex]+distance;
 
                 //DEBUG: 
-                printf("point %d distance:%d updated point %d distance:%d\n",minIndex,dist[minIndex],next,dist[next]);
+                // printf("point %d distance:%d updated point %d distance:%d\n",minIndex,dist[minIndex],next,dist[next]);
             }
         }
     }
@@ -66,9 +66,9 @@ int main(){
         cout<<dist[n]<<endl;
     }
     //DEBUG:
-    for(int i=1;i<=n;i++){
-        cout<<dist[i]<<" ";
-    }
+    // for(int i=1;i<=n;i++){
+    //     cout<<dist[i]<<" ";
+    // }
     return 0;
 }
 //TODO:DEBUG
