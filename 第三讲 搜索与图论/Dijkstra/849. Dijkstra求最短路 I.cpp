@@ -31,10 +31,10 @@ int main(){
         int minDistance=0x3f;
         int minIndex=0;
         //查找距离最近的未确定最短路的点
-        for(int i=1;i<=n;i++){
-            if(!isShortest[i]&&dist[i]<minDistance){
-                minDistance=dist[i];
-                minIndex=i;
+        for(int j=1;j<=n;j++){
+            if(!isShortest[j]&&dist[j]<minDistance){
+                minDistance=dist[j];
+                minIndex=j;
             }
         }
 
