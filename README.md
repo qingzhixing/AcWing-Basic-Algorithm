@@ -39,5 +39,6 @@ CalculateRangeHash公式推导以及计算前缀哈希的方式
 存储树的方式，如何确定根节点  
 > 无向图存储，根节点默认1  
 
-- [ ] [849. Dijkstra求最短路 I](https://www.acwing.com/problem/content/851/)
+- [x] [849. Dijkstra求最短路 I](https://www.acwing.com/problem/content/851/)
 wtf??? DEBUG  
+> 重写代码后通过测试
