@@ -42,3 +42,8 @@ CalculateRangeHash公式推导以及计算前缀哈希的方式
 - [x] [849. Dijkstra求最短路 I](https://www.acwing.com/problem/content/851/)
 wtf??? DEBUG  
 > 重写代码后通过测试
+
+- [ ] [858. Prim算法求最小生成树](https://www.acwing.com/problem/content/860/)
+再写一次  
+- [ ] [859. Kruskal算法求最小生成树](https://www.acwing.com/problem/content/861/)
+复习如何判断是否有解
