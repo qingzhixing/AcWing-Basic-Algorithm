@@ -4,6 +4,8 @@ AcWing算法基础课项目,所有题目均以c++实现
 有些题目会提供多个解法，每个都可以看一看。  
 review list里面放了我的复习题单或者复习的知识点,可以浏览一下。
 
+> 空了好几个月，现在从头开始写-2023.4.20
+
 ## review list
 
 - [ ] [789. 数的范围](https://www.acwing.com/problem/content/description/791/)
