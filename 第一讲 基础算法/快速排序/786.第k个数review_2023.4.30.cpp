@@ -7,9 +7,15 @@ using std::pair;
 using std::swap;
 
 #define MAX_N 1000000010
-const pair<int, int> emptyPair = make_pair(-1, -1);
+typedef Board pair<int,int>;
+const Board emptyPair = make_pair(-1, -1);
 int n, k;
 int a[MAX_N];
+
+bool operator = (const Board& source,const Board& target)const{
+    return source.first==target.first&&
+source.second==target.second;
+}
 
 /*
     返回值：3个两个间隔元素下标
@@ -18,7 +24,7 @@ int a[MAX_N];
         return.first<=k<=return.right:a[k]=基准值
         return.second<k<=right:a[k]>基准值
 */
-pair<int, int> Classify(int left, int right)
+Board Classify(int left, int right)
 {
     if (left > right)
         return emptyPair;
@@ -49,7 +55,7 @@ void Solute(int left, int right)
 {
     if (left >= right)
         return;
-    pair<int, int> board = Classify(left, right);
+    Board board = Classify(left, right);
     if (board == emptyPair)
         return;
     if (k < board.first)
