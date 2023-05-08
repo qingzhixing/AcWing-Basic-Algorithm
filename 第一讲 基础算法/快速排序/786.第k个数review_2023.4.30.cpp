@@ -1,11 +1,3 @@
-// TODO:啥玩意？这啥错？怎么改？
-/* TODO: ERR:
-    No valid executable file was produced by the compiler
-    ./ccdpll8r.o: in function `__static_initialization_and_destruction_0(int, int)':
-    src:(.text+0x2f4): relocation truncated to fit: R_X86_64_PC32 against `.bss'
-    src:(.text+0x30d): relocation truncated to fit: R_X86_64_PC32 against `.bss'
-    collect2: 错误：ld 返回 1
-*/
 //  核心算法：三路快排
 #include <iostream>
 using std::cin;
@@ -14,7 +6,7 @@ using std::make_pair;
 using std::pair;
 using std::swap;
 
-#define MAX_N 1000000010
+#define MAX_N 100010
 typedef pair<int, int> Board;
 const Board emptyPair = make_pair(-1, -1);
 int n, k;
@@ -88,5 +80,9 @@ int main()
         cin >> a[i];
     }
     Solute(0, n - 1);
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << ' ';
+    }
     return 0;
 }
