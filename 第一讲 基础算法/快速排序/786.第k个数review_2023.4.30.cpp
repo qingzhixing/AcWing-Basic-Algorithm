@@ -30,20 +30,21 @@ Board Classify(int left, int right)
         return emptyPair;
 
     // 默认最右边的为基准值
-    int pivotIndex = right;
+    // 基准值位置会变动所以不能取pivotIndex得提前取值
+    int pivot = a[right];
     int pointer = left;
     // 中间区域左右边界:[leftBoard,rightBoard]
     int leftBoard = left, rightBoard = right + 1;
     while (pointer < rightBoard)
     {
-        if (a[pointer] < a[pivotIndex])
+        if (a[pointer] < pivot)
         {
-            swap(a[pivotIndex++], a[leftBoard++]);
+            swap(a[pointer++], a[leftBoard++]);
             continue;
         }
-        if (a[pointer] > a[pivotIndex])
+        if (a[pointer] > pivot)
         {
-            swap(a[pivotIndex++], a[--rightBoard]);
+            swap(a[pointer], a[--rightBoard]);
             continue;
         }
         pointer++;
@@ -57,32 +58,37 @@ void Solute(int left, int right)
         return;
     Board board = Classify(left, right);
     if (CheckBoardEqualsTo(board, emptyPair))
-        return;
-    if (k < board.first)
-    {
+        // TODO: 三路排序需要debug
+        /*	return;
+        if (k < board.first)
+        {
+            Solute(left, board.first - 1);
+        }
+        else if (k > board.second - 1)
+        {
+            Solute(board.second, right);
+        }
+        else
+        {
+            cout << a[k];
+        }*/
         Solute(left, board.first - 1);
-    }
-    else if (k > board.second)
-    {
-        Solute(board.second + 1, right);
-    }
-    else
-    {
-        cout << a[k];
-    }
+    Solute(board.second + 1, right);
 }
 
 int main()
 {
     cin >> n >> k;
+    k--; // 从0开始
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
     Solute(0, n - 1);
-    for (int i = 0; i < n; i++)
+    /*for (int i = 0; i < n; i++)
     {
         cout << a[i] << ' ';
-    }
+    }*/
+    cout << a[k];
     return 0;
 }
