@@ -1,8 +1,12 @@
+// 核心算法：三路快排
 #include <iostream>
-#include <utility>
-using namespace std;
+using std::cin;
+using std::cout;
+using std::make_pair;
+using std::pair;
+using std::swap;
 
-#define MAX_N int(1e9 + 10)
+#define MAX_N 1000000010
 const pair<int, int> emptyPair = make_pair(-1, -1);
 int n, k;
 int a[MAX_N];
