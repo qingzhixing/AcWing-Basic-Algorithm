@@ -1,4 +1,12 @@
-// 核心算法：三路快排
+// TODO:啥玩意？这啥错？怎么改？
+/* TODO: ERR:
+    No valid executable file was produced by the compiler
+    ./ccdpll8r.o: in function `__static_initialization_and_destruction_0(int, int)':
+    src:(.text+0x2f4): relocation truncated to fit: R_X86_64_PC32 against `.bss'
+    src:(.text+0x30d): relocation truncated to fit: R_X86_64_PC32 against `.bss'
+    collect2: 错误：ld 返回 1
+*/
+//  核心算法：三路快排
 #include <iostream>
 using std::cin;
 using std::cout;
@@ -7,14 +15,14 @@ using std::pair;
 using std::swap;
 
 #define MAX_N 1000000010
-typedef Board pair<int,int>;
+typedef pair<int, int> Board;
 const Board emptyPair = make_pair(-1, -1);
 int n, k;
 int a[MAX_N];
 
-bool operator = (const Board& source,const Board& target)const{
-    return source.first==target.first&&
-source.second==target.second;
+bool CheckBoardEqualsTo(const Board &source, const Board &target)
+{
+    return source.first == target.first && source.second == target.second;
 }
 
 /*
@@ -56,7 +64,7 @@ void Solute(int left, int right)
     if (left >= right)
         return;
     Board board = Classify(left, right);
-    if (board == emptyPair)
+    if (CheckBoardEqualsTo(board, emptyPair))
         return;
     if (k < board.first)
     {
