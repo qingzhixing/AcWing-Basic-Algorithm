@@ -58,22 +58,22 @@ void Solute(int left, int right)
         return;
     Board board = Classify(left, right);
     if (CheckBoardEqualsTo(board, emptyPair))
-        // TODO: 三路排序需要debug
-        /*	return;
-        if (k < board.first)
-        {
-            Solute(left, board.first - 1);
-        }
-        else if (k > board.second - 1)
-        {
-            Solute(board.second, right);
-        }
-        else
-        {
-            cout << a[k];
-        }*/
-        Solute(left, board.first - 1);
-    Solute(board.second + 1, right);
+        return;
+    // TODO: 三路排序分区间优化需要debug
+    // if (k < board.first)
+    // {
+    //     Solute(left, board.first - 1);
+    // }
+    // else if (k > board.second - 1)
+    // {
+    //     Solute(board.second, right);
+    // }
+    // else
+    // {
+    //     cout << a[k];
+    // }
+    Solute(left, board.first - 1);
+    Solute(board.second, right);
 }
 
 int main()
@@ -85,10 +85,10 @@ int main()
         cin >> a[i];
     }
     Solute(0, n - 1);
-    /*for (int i = 0; i < n; i++)
-    {
-        cout << a[i] << ' ';
-    }*/
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << a[i] << ' ';
+    // }
     cout << a[k];
     return 0;
 }
