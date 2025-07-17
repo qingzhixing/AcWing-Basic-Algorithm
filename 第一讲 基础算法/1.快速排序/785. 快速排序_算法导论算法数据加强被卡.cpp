@@ -6,7 +6,6 @@ using namespace std;
 
 int Partition(vector<int> &nums, int left, int right)
 {
-    // pivotIndex=right;
     int pivotNumber = nums[right];
     int i = left - 1;
     for (int j = left; j <= right - 1; j++)
